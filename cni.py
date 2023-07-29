@@ -49,6 +49,8 @@ inst_name_sql_list = []
 inst_code_sql_list = []
 inst_addr_sql_list = []
 
+inst_info_list = []
+
 # check whether inst_name is in the database
 for i in range(len(input_name_list)):
     inst_name = input_name_list[i]
@@ -86,11 +88,16 @@ for i in range(len(input_name_list)):
     inst_name_sql_list.append(inst_name_sql)
     inst_code_sql_list.append(inst_code_sql)
     inst_addr_sql_list.append(inst_addr_sql)
+    inst_info_list.append([new_inst_name_id, new_inst_id, inst_name, inst_type_id, inst_dynasty_id, inst_addr_id, inst_source])
 
 with open('output_sql.txt', 'w', encoding='utf-8') as f:
     for i in range(len(inst_name_sql_list)):
         f.write(inst_name_sql_list[i] + '\n')
         f.write(inst_code_sql_list[i] + '\n')
         f.write(inst_addr_sql_list[i] + '\n')
+
+inst_info_df = pd.DataFrame(inst_info_list, columns=['c_inst_name_code', 'c_inst_code', 'c_inst_name_hz', 'c_inst_type_code', 'c_inst_begin_dy', 'c_inst_addr_id', 'c_source'])
+inst_info_df.to_csv('output_inst_info.csv', index=False, encoding='utf-8')
+inst_info_df.to_excel('output_inst_info.xlsx', index=False, encoding='utf-8')
 
 print('Finished!')

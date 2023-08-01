@@ -1,2 +1,9 @@
-c_inst_name_code,c_inst_code,c_inst_name_hz,c_inst_type_code,c_inst_begin_dy,c_inst_addr_id,c_source
-2538,3920,建初寺,2,19,4540,18417
+c_inst_code,c_inst_name_hz,c_inst_name_code,c_inst_type_code,c_inst_begin_dy,c_inst_addr_id,c_source
+3920,建初寺,777,2,19,4540,18417
+3921,國慶寺,2539,2,19,5402,18417
+3922,南巖寺,2540,2,19,5404,18417
+3923,天童寺,328,2,19,5405,18417
+3924,天童寺,328,2,20,7627,18417
+3925,平陽寺,2543,2,20,5398,18417
+3926,天寧寺,326,2,20,7569,18417
+3927,虞山書院,2350,1,20,7546,65006

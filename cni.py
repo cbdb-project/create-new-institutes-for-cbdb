@@ -23,6 +23,7 @@ def get_latest_inst_id(url):
 input_pd = pd.read_csv('input.txt', delimiter='\t', encoding='utf-8', dtype=str, header=None)
 
 input_name_list = [x.strip() for x in input_pd[0].tolist()]
+input_name_id_list = []
 input_type_list = input_pd[1].tolist()
 input_dynasty_list = input_pd[2].tolist()
 input_addr_id_list = [x.strip() for x in input_pd[4].tolist()]
@@ -51,30 +52,42 @@ inst_addr_sql_list = []
 
 inst_info_list = []
 
+# remove the content in existing_inst_name_filename
+existing_inst_name_filename = 'existing_inst_name.csv'
+with open(existing_inst_name_filename, 'w', encoding='utf-8') as f:
+    f.write('')
+
 # check whether inst_name is in the database
+print("Existing inst_name check...")
 for i in range(len(input_name_list)):
     inst_name = input_name_list[i]
     url = "https://input.cbdb.fas.harvard.edu/api/select/search/socialinstcode?q=" + inst_name
     response = requests.get(url)
     if response.json()['total'] != 0:
-        existing_inst_name_filename = 'existing_inst_name.csv'
-        with open(existing_inst_name_filename, 'w', encoding='utf-8') as f:
-            f.write('')
+        inst_name_id = response.json()['data'][0]['c_inst_name_code']
+        print(f"{inst_name},{inst_name_id}")
         data_list = [response.json()['data']][0]
         column_names = data_list[0].keys()
         # print(column_names)
-        with open(existing_inst_name_filename, mode='w', newline='', encoding='utf-8') as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=column_names)
-            writer.writeheader()
-            for row in data_list:
-                writer.writerow(row)
+        # with open(existing_inst_name_filename, mode='a+', newline='', encoding='utf-8') as csvfile:
+        #     writer = csv.DictWriter(csvfile, fieldnames=column_names)
+        #     writer.writeheader()
+        #     for row in data_list:
+        #         writer.writerow(row)
         # raise Exception('Find existing inst_name, please check existing_inst_name.csv')
+        input_name_id_list.append(inst_name_id)
+    else:
+        input_name_id_list.append("")
+
 
 for i in range(len(input_name_list)):
     inst_name_sql = ""
     inst_code_sql = ""
     inst_addr_sql = ""
-    new_inst_name_id = int(latest_inst_name_id) + i + 1
+    if input_name_id_list[i] != "":
+        new_inst_name_id = int(input_name_id_list[i])
+    else:
+        new_inst_name_id = int(latest_inst_name_id) + i + 1
     new_inst_id = int(latest_inst_id) + i + 1
     inst_name = input_name_list[i]
     inst_type_id = inst_type_dict[input_type_list[i]]
@@ -82,21 +95,23 @@ for i in range(len(input_name_list)):
     inst_addr_id = input_addr_id_list[i]
     inst_source = input_source_list[i]
     inst_name_pinyin = ' '.join(lazy_pinyin(inst_name))
-    inst_name_sql = "INSERT INTO `SOCIAL_INSTITUTION_NAME_CODES` (`c_inst_name_code`, `c_inst_name_hz`, `c_inst_name_py`) VALUES ('" + str(new_inst_name_id) + "', '" + inst_name + "', '" + inst_name_pinyin + "');"
-    inst_code_sql = "INSERT INTO `SOCIAL_INSTITUTION_CODES` (`c_inst_name_code`, `c_inst_code`, `c_inst_type_code`, `c_inst_begin_dy`, `c_source`) VALUES ('" + str(new_inst_name_id) +  "', '" + str(new_inst_id) + "', '" + inst_type_id + "', '" + inst_dynasty_id + "', '" + inst_source + "');"
-    inst_addr_sql = "INSERT INTO `SOCIAL_INSTITUTION_ADDR` (`c_inst_name_code`, `c_inst_code`, `c_inst_addr_type_code`, `c_inst_addr_id`, `inst_xcoord`, `inst_ycoord`, `c_source`) VALUES ('" + str(new_inst_name_id) + "', '" + str(new_inst_id) + "', '1', '" + inst_addr_id + "', '0', '0', '" + inst_source + "');"
+    # Don't create new inst_name if it is already in the database
+    if input_name_id_list[i] == "":
+        inst_name_sql = "INSERT INTO `SOCIAL_INSTITUTION_NAME_CODES` (`c_inst_name_code`, `c_inst_name_hz`, `c_inst_name_py`) VALUES ('" + str(new_inst_name_id) + "', '" + inst_name + "', '" + inst_name_pinyin + "');"
     inst_name_sql_list.append(inst_name_sql)
+    inst_code_sql = "INSERT INTO `SOCIAL_INSTITUTION_CODES` (`c_inst_name_code`, `c_inst_code`, `c_inst_type_code`, `c_inst_begin_dy`, `c_source`, `c_inst_floruit_dy`) VALUES ('" + str(new_inst_name_id) +  "', '" + str(new_inst_id) + "', '" + inst_type_id + "', '" + inst_dynasty_id + "', '" + inst_source + "', '" + inst_dynasty_id + "');"
     inst_code_sql_list.append(inst_code_sql)
+    inst_addr_sql = "INSERT INTO `SOCIAL_INSTITUTION_ADDR` (`c_inst_name_code`, `c_inst_code`, `c_inst_addr_type_code`, `c_inst_addr_id`, `inst_xcoord`, `inst_ycoord`, `c_source`) VALUES ('" + str(new_inst_name_id) + "', '" + str(new_inst_id) + "', '1', '" + inst_addr_id + "', '0', '0', '" + inst_source + "');"
     inst_addr_sql_list.append(inst_addr_sql)
-    inst_info_list.append([new_inst_name_id, new_inst_id, inst_name, inst_type_id, inst_dynasty_id, inst_addr_id, inst_source])
+    inst_info_list.append([new_inst_id, inst_name, new_inst_name_id, inst_type_id, inst_dynasty_id, inst_addr_id, inst_source])
 
 with open('output_sql.txt', 'w', encoding='utf-8') as f:
-    for i in range(len(inst_name_sql_list)):
+    for i in range(len(inst_code_sql_list)):
         f.write(inst_name_sql_list[i] + '\n')
         f.write(inst_code_sql_list[i] + '\n')
         f.write(inst_addr_sql_list[i] + '\n')
 
-inst_info_df = pd.DataFrame(inst_info_list, columns=['c_inst_name_code', 'c_inst_code', 'c_inst_name_hz', 'c_inst_type_code', 'c_inst_begin_dy', 'c_inst_addr_id', 'c_source'])
+inst_info_df = pd.DataFrame(inst_info_list, columns=['c_inst_code', 'c_inst_name_hz', 'c_inst_name_code', 'c_inst_type_code', 'c_inst_begin_dy', 'c_inst_addr_id', 'c_source'])
 inst_info_df.to_csv('output_inst_info.csv', index=False, encoding='utf-8')
 inst_info_df.to_excel('output_inst_info.xlsx', index=False, encoding='utf-8')
 

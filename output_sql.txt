@@ -1,3 +1,24 @@
-INSERT INTO `SOCIAL_INSTITUTION_NAME_CODES` (`c_inst_name_code`, `c_inst_name_hz`, `c_inst_name_py`) VALUES ('2538', '建初寺', 'jian chu si');
-INSERT INTO `SOCIAL_INSTITUTION_CODES` (`c_inst_name_code`, `c_inst_code`, `c_inst_type_code`, `c_inst_begin_dy`, `c_source`) VALUES ('2538', '3920', '2', '19', '18417');
-INSERT INTO `SOCIAL_INSTITUTION_ADDR` (`c_inst_name_code`, `c_inst_code`, `c_inst_addr_type_code`, `c_inst_addr_id`, `inst_xcoord`, `inst_ycoord`, `c_source`) VALUES ('2538', '3920', '1', '4540', '0', '0', '18417');
+
+INSERT INTO `SOCIAL_INSTITUTION_CODES` (`c_inst_name_code`, `c_inst_code`, `c_inst_type_code`, `c_inst_begin_dy`, `c_source`, `c_inst_floruit_dy`) VALUES ('777', '3920', '2', '19', '18417', '19');
+INSERT INTO `SOCIAL_INSTITUTION_ADDR` (`c_inst_name_code`, `c_inst_code`, `c_inst_addr_type_code`, `c_inst_addr_id`, `inst_xcoord`, `inst_ycoord`, `c_source`) VALUES ('777', '3920', '1', '4540', '0', '0', '18417');
+INSERT INTO `SOCIAL_INSTITUTION_NAME_CODES` (`c_inst_name_code`, `c_inst_name_hz`, `c_inst_name_py`) VALUES ('2539', '國慶寺', 'guo qing si');
+INSERT INTO `SOCIAL_INSTITUTION_CODES` (`c_inst_name_code`, `c_inst_code`, `c_inst_type_code`, `c_inst_begin_dy`, `c_source`, `c_inst_floruit_dy`) VALUES ('2539', '3921', '2', '19', '18417', '19');
+INSERT INTO `SOCIAL_INSTITUTION_ADDR` (`c_inst_name_code`, `c_inst_code`, `c_inst_addr_type_code`, `c_inst_addr_id`, `inst_xcoord`, `inst_ycoord`, `c_source`) VALUES ('2539', '3921', '1', '5402', '0', '0', '18417');
+INSERT INTO `SOCIAL_INSTITUTION_NAME_CODES` (`c_inst_name_code`, `c_inst_name_hz`, `c_inst_name_py`) VALUES ('2540', '南巖寺', 'nan yan si');
+INSERT INTO `SOCIAL_INSTITUTION_CODES` (`c_inst_name_code`, `c_inst_code`, `c_inst_type_code`, `c_inst_begin_dy`, `c_source`, `c_inst_floruit_dy`) VALUES ('2540', '3922', '2', '19', '18417', '19');
+INSERT INTO `SOCIAL_INSTITUTION_ADDR` (`c_inst_name_code`, `c_inst_code`, `c_inst_addr_type_code`, `c_inst_addr_id`, `inst_xcoord`, `inst_ycoord`, `c_source`) VALUES ('2540', '3922', '1', '5404', '0', '0', '18417');
+
+INSERT INTO `SOCIAL_INSTITUTION_CODES` (`c_inst_name_code`, `c_inst_code`, `c_inst_type_code`, `c_inst_begin_dy`, `c_source`, `c_inst_floruit_dy`) VALUES ('328', '3923', '2', '19', '18417', '19');
+INSERT INTO `SOCIAL_INSTITUTION_ADDR` (`c_inst_name_code`, `c_inst_code`, `c_inst_addr_type_code`, `c_inst_addr_id`, `inst_xcoord`, `inst_ycoord`, `c_source`) VALUES ('328', '3923', '1', '5405', '0', '0', '18417');
+
+INSERT INTO `SOCIAL_INSTITUTION_CODES` (`c_inst_name_code`, `c_inst_code`, `c_inst_type_code`, `c_inst_begin_dy`, `c_source`, `c_inst_floruit_dy`) VALUES ('328', '3924', '2', '20', '18417', '20');
+INSERT INTO `SOCIAL_INSTITUTION_ADDR` (`c_inst_name_code`, `c_inst_code`, `c_inst_addr_type_code`, `c_inst_addr_id`, `inst_xcoord`, `inst_ycoord`, `c_source`) VALUES ('328', '3924', '1', '7627', '0', '0', '18417');
+INSERT INTO `SOCIAL_INSTITUTION_NAME_CODES` (`c_inst_name_code`, `c_inst_name_hz`, `c_inst_name_py`) VALUES ('2543', '平陽寺', 'ping yang si');
+INSERT INTO `SOCIAL_INSTITUTION_CODES` (`c_inst_name_code`, `c_inst_code`, `c_inst_type_code`, `c_inst_begin_dy`, `c_source`, `c_inst_floruit_dy`) VALUES ('2543', '3925', '2', '20', '18417', '20');
+INSERT INTO `SOCIAL_INSTITUTION_ADDR` (`c_inst_name_code`, `c_inst_code`, `c_inst_addr_type_code`, `c_inst_addr_id`, `inst_xcoord`, `inst_ycoord`, `c_source`) VALUES ('2543', '3925', '1', '5398', '0', '0', '18417');
+
+INSERT INTO `SOCIAL_INSTITUTION_CODES` (`c_inst_name_code`, `c_inst_code`, `c_inst_type_code`, `c_inst_begin_dy`, `c_source`, `c_inst_floruit_dy`) VALUES ('326', '3926', '2', '20', '18417', '20');
+INSERT INTO `SOCIAL_INSTITUTION_ADDR` (`c_inst_name_code`, `c_inst_code`, `c_inst_addr_type_code`, `c_inst_addr_id`, `inst_xcoord`, `inst_ycoord`, `c_source`) VALUES ('326', '3926', '1', '7569', '0', '0', '18417');
+
+INSERT INTO `SOCIAL_INSTITUTION_CODES` (`c_inst_name_code`, `c_inst_code`, `c_inst_type_code`, `c_inst_begin_dy`, `c_source`, `c_inst_floruit_dy`) VALUES ('2350', '3927', '1', '20', '65006', '20');
+INSERT INTO `SOCIAL_INSTITUTION_ADDR` (`c_inst_name_code`, `c_inst_code`, `c_inst_addr_type_code`, `c_inst_addr_id`, `inst_xcoord`, `inst_ycoord`, `c_source`) VALUES ('2350', '3927', '1', '7546', '0', '0', '65006');

@@ -1,3 +1,12 @@
-INSERT INTO `SOCIAL_INSTITUTION_NAME_CODES` (`c_inst_name_code`, `c_inst_name_hz`, `c_inst_name_py`) VALUES ('2545', '泗洲寺', 'si zhou si');
-INSERT INTO `SOCIAL_INSTITUTION_CODES` (`c_inst_name_code`, `c_inst_code`, `c_inst_type_code`, `c_inst_begin_dy`, `c_source`, `c_inst_floruit_dy`) VALUES ('2545', '3927', '2', '19', '65006', '19');
-INSERT INTO `SOCIAL_INSTITUTION_ADDR` (`c_inst_name_code`, `c_inst_code`, `c_inst_addr_type_code`, `c_inst_addr_id`, `inst_xcoord`, `inst_ycoord`, `c_source`) VALUES ('2545', '3927', '1', '7542', '0', '0', '65006');
+
+INSERT INTO `SOCIAL_INSTITUTION_CODES` (`c_inst_name_code`, `c_inst_code`, `c_inst_type_code`, `c_inst_begin_dy`, `c_source`, `c_inst_floruit_dy`) VALUES ('1280', '3928', '2', '19', '65006', '19');
+INSERT INTO `SOCIAL_INSTITUTION_ADDR` (`c_inst_name_code`, `c_inst_code`, `c_inst_addr_type_code`, `c_inst_addr_id`, `inst_xcoord`, `inst_ycoord`, `c_source`) VALUES ('1280', '3928', '1', '5346', '0', '0', '65006');
+
+INSERT INTO `SOCIAL_INSTITUTION_CODES` (`c_inst_name_code`, `c_inst_code`, `c_inst_type_code`, `c_inst_begin_dy`, `c_source`, `c_inst_floruit_dy`) VALUES ('157', '3929', '2', '19', '65006', '19');
+INSERT INTO `SOCIAL_INSTITUTION_ADDR` (`c_inst_name_code`, `c_inst_code`, `c_inst_addr_type_code`, `c_inst_addr_id`, `inst_xcoord`, `inst_ycoord`, `c_source`) VALUES ('157', '3929', '1', '7225', '0', '0', '65006');
+
+INSERT INTO `SOCIAL_INSTITUTION_CODES` (`c_inst_name_code`, `c_inst_code`, `c_inst_type_code`, `c_inst_begin_dy`, `c_source`, `c_inst_floruit_dy`) VALUES ('784', '3930', '2', '19', '65006', '19');
+INSERT INTO `SOCIAL_INSTITUTION_ADDR` (`c_inst_name_code`, `c_inst_code`, `c_inst_addr_type_code`, `c_inst_addr_id`, `inst_xcoord`, `inst_ycoord`, `c_source`) VALUES ('784', '3930', '1', '7241', '0', '0', '65006');
+INSERT INTO `SOCIAL_INSTITUTION_NAME_CODES` (`c_inst_name_code`, `c_inst_name_hz`, `c_inst_name_py`) VALUES ('2550', '全福寺', 'quan fu si');
+INSERT INTO `SOCIAL_INSTITUTION_CODES` (`c_inst_name_code`, `c_inst_code`, `c_inst_type_code`, `c_inst_begin_dy`, `c_source`, `c_inst_floruit_dy`) VALUES ('2550', '3931', '2', '19', '65006', '19');
+INSERT INTO `SOCIAL_INSTITUTION_ADDR` (`c_inst_name_code`, `c_inst_code`, `c_inst_addr_type_code`, `c_inst_addr_id`, `inst_xcoord`, `inst_ycoord`, `c_source`) VALUES ('2550', '3931', '1', '7540', '0', '0', '65006');

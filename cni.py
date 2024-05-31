@@ -113,6 +113,6 @@ with open('output_sql.txt', 'w', encoding='utf-8') as f:
 
 inst_info_df = pd.DataFrame(inst_info_list, columns=['c_inst_code', 'c_inst_name_hz', 'c_inst_name_code', 'c_inst_type_code', 'c_inst_begin_dy', 'c_inst_addr_id', 'c_source'])
 inst_info_df.to_csv('output_inst_info.csv', index=False, encoding='utf-8')
-inst_info_df.to_excel('output_inst_info.xlsx', index=False, encoding='utf-8')
+inst_info_df.to_excel('output_inst_info.xlsx', index=False)
 
 print('Finished!')

@@ -1,6 +1,9 @@
-INSERT INTO `SOCIAL_INSTITUTION_NAME_CODES` (`c_inst_name_code`, `c_inst_name_hz`, `c_inst_name_py`) VALUES ('2580', '清谿書院', 'qing xi shu yuan');
-INSERT INTO `SOCIAL_INSTITUTION_CODES` (`c_inst_name_code`, `c_inst_code`, `c_inst_type_code`, `c_inst_begin_dy`, `c_source`, `c_inst_floruit_dy`) VALUES ('2580', '3955', '1', '20', '27890', '20');
-INSERT INTO `SOCIAL_INSTITUTION_ADDR` (`c_inst_name_code`, `c_inst_code`, `c_inst_addr_type_code`, `c_inst_addr_id`, `inst_xcoord`, `inst_ycoord`, `c_source`) VALUES ('2580', '3955', '1', '7618', '0', '0', '27890');
-INSERT INTO `SOCIAL_INSTITUTION_NAME_CODES` (`c_inst_name_code`, `c_inst_name_hz`, `c_inst_name_py`) VALUES ('2581', '南菁書院', 'nan jing shu yuan');
-INSERT INTO `SOCIAL_INSTITUTION_CODES` (`c_inst_name_code`, `c_inst_code`, `c_inst_type_code`, `c_inst_begin_dy`, `c_source`, `c_inst_floruit_dy`) VALUES ('2581', '3956', '1', '20', '27890', '20');
-INSERT INTO `SOCIAL_INSTITUTION_ADDR` (`c_inst_name_code`, `c_inst_code`, `c_inst_addr_type_code`, `c_inst_addr_id`, `inst_xcoord`, `inst_ycoord`, `c_source`) VALUES ('2581', '3956', '1', '7533', '0', '0', '27890');
+INSERT INTO `SOCIAL_INSTITUTION_NAME_CODES` (`c_inst_name_code`, `c_inst_name_hz`, `c_inst_name_py`) VALUES ('2583', '延慶院', 'yan qing yuan');
+INSERT INTO `SOCIAL_INSTITUTION_CODES` (`c_inst_name_code`, `c_inst_code`, `c_inst_type_code`, `c_inst_begin_dy`, `c_source`, `c_inst_floruit_dy`) VALUES ('2583', '3957', '2', '15', '64847', '15');
+INSERT INTO `SOCIAL_INSTITUTION_ADDR` (`c_inst_name_code`, `c_inst_code`, `c_inst_addr_type_code`, `c_inst_addr_id`, `inst_xcoord`, `inst_ycoord`, `c_source`) VALUES ('2583', '3957', '1', '12232', '0', '0', '64847');
+INSERT INTO `SOCIAL_INSTITUTION_NAME_CODES` (`c_inst_name_code`, `c_inst_name_hz`, `c_inst_name_py`) VALUES ('2584', '寶雨院', 'bao yu yuan');
+INSERT INTO `SOCIAL_INSTITUTION_CODES` (`c_inst_name_code`, `c_inst_code`, `c_inst_type_code`, `c_inst_begin_dy`, `c_source`, `c_inst_floruit_dy`) VALUES ('2584', '3958', '2', '15', '64847', '15');
+INSERT INTO `SOCIAL_INSTITUTION_ADDR` (`c_inst_name_code`, `c_inst_code`, `c_inst_addr_type_code`, `c_inst_addr_id`, `inst_xcoord`, `inst_ycoord`, `c_source`) VALUES ('2584', '3958', '1', '12232', '0', '0', '64847');
+INSERT INTO `SOCIAL_INSTITUTION_NAME_CODES` (`c_inst_name_code`, `c_inst_name_hz`, `c_inst_name_py`) VALUES ('2585', '勝願寺', 'sheng yuan si');
+INSERT INTO `SOCIAL_INSTITUTION_CODES` (`c_inst_name_code`, `c_inst_code`, `c_inst_type_code`, `c_inst_begin_dy`, `c_source`, `c_inst_floruit_dy`) VALUES ('2585', '3959', '2', '15', '64847', '15');
+INSERT INTO `SOCIAL_INSTITUTION_ADDR` (`c_inst_name_code`, `c_inst_code`, `c_inst_addr_type_code`, `c_inst_addr_id`, `inst_xcoord`, `inst_ycoord`, `c_source`) VALUES ('2585', '3959', '1', '12232', '0', '0', '64847');

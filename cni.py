@@ -30,7 +30,7 @@ input_addr_id_list = [x.strip() for x in input_pd[4].tolist()]
 input_source_list = [x.strip() for x in input_pd[5].tolist()]
 
 latest_inst_name_id = ""
-call_latest_inst_name_url = "https://input.cbdb.fas.harvard.edu/socialinstitutioncodes/create"
+call_latest_inst_name_url = "https://input.cbdb.fas.harvard.edu/codes/SOCIAL_INSTITUTION_NAME_CODES/create"
 latest_inst_name_id = get_latest_inst_name_id(call_latest_inst_name_url)
 
 latest_inst_id = ""
